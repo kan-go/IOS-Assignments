@@ -49,29 +49,35 @@ class FirstViewController: UIViewController {
     
     @IBAction func button3Clicked(sender: AnyObject) {
         
-        let nameInput:String = nameInputField.text!
-        
         let ageString:String = ageInputField.text!
         
+        let nameInput:String = nameInputField.text!
         
         if let age = Int(ageString){
             
-            print("Hello " + nameInput + ", you are " + String(age) + " years old")
+            let message:String = "Hello " + nameInput + ", you are " + String(age) + " years old"
+            
+            print(message)
             
             if (age>=21){
                 print("You can drink")
             }
             
-            else if (age>=18){
+            if (age>=18){
                 
                 print("You can vote")
             }
             
-            else if (age>=16){
+            if (age>=16){
                 
                 print("You can drive")
                 
             }
+        }
+        
+        else{
+            
+            print("Enter valid age")
         }
         
     }
@@ -85,21 +91,26 @@ class FirstViewController: UIViewController {
         
         if let age = Int(ageString){
             
-            if (age>=16 && age<18){
+            if (age>=21){
                 
-                print("You can drive")
+                print("You can drive, vote and drink (but not at the same time!")
             }
             
-            else if (age>=18 && age<21){
+            else if (age>=18){
                 
                 print("You can drive and vote")
             }
             
-            else if (age>=21){
+            else if (age>=16){
                 
-                print("You can drive, vote and drink (but not at the same time!)")
+                print("You can drive")
             }
             
+        }
+        
+        else{
+            
+            print("Enter valid age")
         }
         
     }
